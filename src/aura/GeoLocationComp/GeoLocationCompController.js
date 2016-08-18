@@ -1,7 +1,7 @@
 ({   
      doInit : function(component,event,helper){      
-		if (navigator.geolocation) {
-  			navigator.geolocation.getCurrentPosition(success);
+	if (navigator.geolocation) {
+  	    navigator.geolocation.getCurrentPosition(success);
             function success(position) {
                  var lat = position.coords.latitude;
                  component.set("v.userLatitude",lat);
