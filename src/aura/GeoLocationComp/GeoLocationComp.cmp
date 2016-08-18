@@ -1,0 +1,16 @@
+<aura:component controller="AccountsData">  
+    <aura:attribute name="userLatitude" type="String"/>
+    <aura:attribute name="userLongitude" type="String"/>
+    <aura:attribute name="Accounts" type="Account[]"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/> 
+    <aura:handler name="change" value="{!v.userLongitude}" action="{!c.handleValueChange}"/>
+    <aura:handler name="change" value="{!v.Accounts}" action="{!c.loadMap}" />  
+    <br/>
+    <center>
+    <div>
+    <h1>Near by Accounts</h1>
+    </div>
+    </center>
+    <div class="map" id="map"></div>
+    <ltng:require scripts="{!$Resource.leaflet+'/leaflet.js'}" styles="{!$Resource.leaflet+'/leaflet.css'}" />
+</aura:component>
